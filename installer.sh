@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-## setup command=wget -q "--no-check-certificate" https://raw.githubusercontent.com/levi-45/enigma2-plugin-extensions-levi45addonspanel/main/installer.sh -O - | /bin/sh
+## setup command=wget -q "--no-check-certificate" https://raw.githubusercontent.com/levi-45/Addon/main/installer.sh -O - | /bin/sh
 ## Only This 2 lines to edit with new version ######
 version='10.1_r20'
 changelog='Fix Upgrade'
