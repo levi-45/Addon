@@ -11,7 +11,15 @@
 from __future__ import print_function
 # local import
 from . import Utils
-from . import _, wgetsts, getfreespace, MYIPK, MYDEB, adxipk, adxdeb
+from . import (
+    _,
+    wgetsts,
+    getfreespace,
+    MYIPK,
+    MYDEB,
+    adxdeb,
+    # adxipk,
+)
 
 from Components.ActionMap import ActionMap
 from Components.Button import Button
@@ -61,8 +69,8 @@ except:
 
 # set
 currversion = '10.1_r19'
-name_plug = 'Levi45 Addon Manager'
-desc_plug = 'Satellite-Forum.com Addons Manager %s' % currversion
+name_plug = 'Levi45 Addon'
+desc_plug = 'Satellite-Forum.com Addons %s' % currversion
 plugin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/{}".format('Levi45Addons'))
 eeppkk = MYIPK.replace('+', '').replace('-', '')
 eeddeebb = MYDEB.replace('+', '').replace('-', '')
@@ -230,9 +238,9 @@ class AboutScreen(Screen):
             if libs:
                 libsssl = libs
             info = ' ---------------------------------------------------- \n'
-            info += 'Levi45 Addons Manager v. %s\n' % currversion
+            info += 'Levi45 Addons v. %s\n' % currversion
             info += ' --------------------------------------------------- \n'
-            info += 'Your New Addons Manager Mod. by @Lululla\n'
+            info += 'Your New Addons Mod. by @Lululla\n'
             info += 'Designs and Graphics by @oktus\n\n'
             info += 'Current IP Wan: %s\nImage Mounted: %sCpu: %s\nPython:%s\nArchitecture info: %s\nLibssl(oscam):\n%s\n' % (ifg, img, arc, python, arkFull, libsssl)
             self['text'].setText(info)
@@ -271,15 +279,17 @@ class AddonsGroups(Screen):
         else:
             self.timer.callback.append(self.downloadxmlpage)
         self.timer.start(500, 1)
-        # self['actions'] = ActionMap(['OkCancelActions',
-                                     # 'ColorActions'], {'ok': self.okClicked,
-                                                       # 'green': self.pluginupdate,
-                                                       # 'blue': self.ShowAbout,
-                                                       # 'yellow': self.shownews,
-                                                       # 'red': self.close,
-                                                       # 'back': self.close,
-                                                       # 'cancel': self.close
-                                                       # }, -2)
+        '''
+        self['actions'] = ActionMap(['OkCancelActions',
+                                     'ColorActions'], {'ok': self.okClicked,
+                                                       'green': self.pluginupdate,
+                                                       'blue': self.ShowAbout,
+                                                       'yellow': self.shownews,
+                                                       'red': self.close,
+                                                       'back': self.close,
+                                                       'cancel': self.close
+                                                       }, -2)
+        '''
         self['actions'] = ActionMap(['OkCancelActions',
                                      'ColorActions',
                                      'DirectionActions',
@@ -359,39 +369,11 @@ class AddonsGroups(Screen):
         print('result:', result)
         return
 
-    # def updateable(self):
-        # try:
-            # selection = str(self.names[0])
-            # lwords = selection.split('_')
-            # lv = lwords[1]
-            # self.lastversion = lv
-            # if float(lv) == float(currversion):
-                # return False
-            # if float(lv) > float(currversion):
-                # return True
-            # return False
-        # except:
-            # return False
-
     def ShowAbout(self):
         self.session.open(AboutScreen)
 
     def shownews(self):
         self.session.open(addonsupdatesScreen)
-
-    # def pluginupdate(self):
-        # softupdate = self.updateable()
-        # if softupdate is True:
-            # if os.path.exists('/var/lib/dpkg/info'):
-                # com = self.edb + self.lastversion + '_all.deb'
-                # dom = 'Levi45AddonsManager' + self.lastversion
-                # self.session.open(Console, _('downloading-installing: %s') % dom, ['dpkg -i --install --force-depends --force-overwrite %s' % com])
-            # else:
-                # com = self.epk + self.lastversion + '_all.ipk'
-                # dom = 'Levi45Addons' + self.lastversion
-                # self.session.open(Console, _('downloading-installing: %s') % dom, ['opkg install -force-overwrite %s' % com])
-        # else:
-            # self.session.open(MessageBox, 'Latest Version Installed', MessageBox.TYPE_WARNING, 5)
 
     def downloadxmlpage(self):
         # url = Utils.b64decoder(epk)
@@ -556,44 +538,6 @@ class AddonPackages(Screen):
         title = (_("Installing %s\nPlease Wait...") % self.dom)
         self.session.open(Console, _(title), [cmd00], closeOnSuccess=False)
 
-# class AutoStartTimerManager:
-
-    # def __init__(self, session):
-        # self.session = session
-        # print("*** running AutoStartTimerManager ***")
-        # if _firstStartlevisaddon:
-            # self.runUpdate()
-
-    # def runUpdate(self):
-        # print("*** running update ***")
-        # try:
-            # global _firstStartlevisaddon
-            # from . import Update
-            # Update.upd_done()
-            # _firstStartlevisaddon = False
-        # except Exception as e:
-            # print('error Softcam Manager', str(e))
-
-
-# def autostart(reason, session=None, **kwargs):
-    # """called with reason=1 to during shutdown, with reason=0 at startup?"""
-    # print("[Softcam] Started")
-    # global autoStartlevisaddon
-    # global _firstStartlevisaddon
-    # if reason == 0:
-        # print('reason 0')
-        # if session is not None:
-            # print('session none')
-            # try:
-                # print("*** running autoStartlevisaddon ***")
-                # _firstStartlevisaddon = True
-                # autoStartlevisaddon = AutoStartTimerManager(session)
-            # except:
-                # print('except autoStartlevisaddon')
-        # else:
-            # print('pass autoStartlevisaddon')
-    # return
-
 
 def main(session, **kwargs):
     session.open(AddonsGroups)
@@ -601,7 +545,7 @@ def main(session, **kwargs):
 
 def menu(menuid, **kwargs):
     if menuid == 'mainmenu':
-        return [(('Levi45 Addon Manager'), main, 'Levi45 Addon Manager', 44)]
+        return [(('Levi45 Addon'), main, 'Levi45 Addon', 44)]
     return []
 
 
