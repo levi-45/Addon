@@ -68,8 +68,8 @@ except:
 
 
 # set
-currversion = '10.1-r20'
-name_plug = 'Levi45 Addons'
+currversion = '10.1-r21'
+name_plug = 'Levi45 Addon'
 desc_plug = 'Satellite-Forum.com Addons %s' % currversion
 plugin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/{}".format('Levi45Addons'))
 eeppkk = MYIPK.replace('+', '').replace('-', '')
@@ -523,7 +523,7 @@ class AddonPackages(Screen):
         if ".deb" in self.plug:
             cmd2 = "dpkg -i '/tmp/" + self.plug + "'"
         if ".ipk" in self.plug:
-            cmd2 = "opkg install --force-overwrite '/tmp/" + self.plug + "'"
+            cmd2 = "opkg install --force-reinstall --force-overwrite '/tmp/" + self.plug + "'"
         elif ".zip" in self.plug:
             cmd2 = "unzip -o -q '/tmp/" + self.plug + "' -d /"
         elif ".tar" in self.plug and "gz" in self.plug:
@@ -545,7 +545,7 @@ def main(session, **kwargs):
 
 def menu(menuid, **kwargs):
     if menuid == 'mainmenu':
-        return [(('Levi45 Addons'), main, 'Levi45 Addons', 44)]
+        return [(('Levi45 Addon'), main, 'Levi45 Addon', 44)]
     return []
 
 
