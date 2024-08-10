@@ -69,7 +69,7 @@ except:
 
 # set
 currversion = '10.1-r20'
-name_plug = 'Levi45 Addon'
+name_plug = 'Levi45 Addons'
 desc_plug = 'Satellite-Forum.com Addons %s' % currversion
 plugin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/{}".format('Levi45Addons'))
 eeppkk = MYIPK.replace('+', '').replace('-', '')
@@ -93,8 +93,8 @@ edeb = adxdeb.replace('+', '').replace('-', '')
 # abouturl = 'https://github.com/Belfagor2005/upload/raw/main/fill/about.txt'
 epk = 'https://github.com/Belfagor2005/upload/raw/main/fill/addons_2024.xml'
 
-installer_url = 'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2xldmktNDUvZW5pZ21hMi1wbHVnaW4tZXh0ZW5zaW9ucy1sZXZpNDVhZGRvbnNwYW5lbC9tYWluL2luc3RhbGxlci5zaA=='
-developer_url = 'aHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS9yZXBvcy9sZXZpLTQ1L2VuaWdtYTItcGx1Z2luLWV4dGVuc2lvbnMtbGV2aTQ1YWRkb25zcGFuZWw='
+installer_url = 'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2xldmktNDUvQWRkb24vbWFpbi9pbnN0YWxsZXIuc2g='
+developer_url = 'aHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS9yZXBvcy9sZXZpLTQ1L0FkZG9u'
 
 # _firstStartlevisaddon = True
 isDreamOS = False
@@ -318,7 +318,7 @@ class AddonsGroups(Screen):
         try:
             remote_version = '0.0'
             remote_changelog = ''
-            req = Utils.Request(Utils.b64decoder(installer_url), headers={'User-Agent': 'Mozilla/5.0'})
+            req = Utils.Request(Utils.b64decoder(installer_url), headers={'User-Agent': AgentRequest})
             page = Utils.urlopen(req).read()
             if PY3:
                 data = page.decode("utf-8")
@@ -340,7 +340,7 @@ class AddonsGroups(Screen):
             if currversion < remote_version:
                 self.Update = True
                 self['key_green'].show()
-                self.mbox = self.session.open(MessageBox, _('New version %s is available\n\nChangelog: %s\n\nPress yellow button to start updating') % (self.new_version, self.new_changelog), MessageBox.TYPE_INFO, timeout=5)
+                self.mbox = self.session.open(MessageBox, _('New version %s is available\n\nChangelog: %s\n\nPress green button to start updating') % (self.new_version, self.new_changelog), MessageBox.TYPE_INFO, timeout=5)
         except Exception as e:
             print(e)
 
@@ -351,7 +351,7 @@ class AddonsGroups(Screen):
             self.session.open(MessageBox, _("Congrats! You already have the latest version..."),  MessageBox.TYPE_INFO, timeout=4)
 
     def update_dev(self):
-        req = Utils.Request(Utils.b64decoder(developer_url), headers={'User-Agent': 'Mozilla/5.0'})
+        req = Utils.Request(Utils.b64decoder(developer_url), headers={'User-Agent': AgentRequest})
         page = Utils.urlopen(req).read()
         data = json.loads(page)
         remote_date = data['pushed_at']
@@ -545,7 +545,7 @@ def main(session, **kwargs):
 
 def menu(menuid, **kwargs):
     if menuid == 'mainmenu':
-        return [(('Levi45 Addon'), main, 'Levi45 Addon', 44)]
+        return [(('Levi45 Addons'), main, 'Levi45 Addons', 44)]
     return []
 
 
