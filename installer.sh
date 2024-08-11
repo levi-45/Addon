@@ -100,7 +100,7 @@ sync
 echo ""
 echo ""
 echo "#########################################################"
-echo "#        	Levi45Addons INSTALLED SUCCESSFULLY           #"
+echo "#         Levi45Addons INSTALLED SUCCESSFULLY           #"
 echo "#                developed by LULULLA                   #"
 echo "#                                                       #"
 echo "#            https://satellite-forum.com                #"

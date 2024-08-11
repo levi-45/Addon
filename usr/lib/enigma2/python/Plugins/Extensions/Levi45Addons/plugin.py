@@ -89,8 +89,6 @@ AgentRequest = Utils.RequestAgent()
 edeb = adxdeb.replace('+', '').replace('-', '')
 
 # linuxsat panel
-# infourl = 'https://github.com/Belfagor2005/upload/raw/main/fill/info.txt'
-# abouturl = 'https://github.com/Belfagor2005/upload/raw/main/fill/about.txt'
 epk = 'https://github.com/Belfagor2005/upload/raw/main/fill/addons_2024.xml'
 
 installer_url = 'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2xldmktNDUvQWRkb24vbWFpbi9pbnN0YWxsZXIuc2g='
@@ -503,18 +501,6 @@ class AddonPackages(Screen):
                 print('error prompt ', e)
                 self['info'].setText('Error')
                 return
-
-    def retfile(self, dest):
-        import requests
-        response = requests.get(self.com)
-        if response.status_code == 200:
-            with open(dest, 'wb') as f:
-                f.write(response.content)
-            print(f"File {dest} scaricato correttamente.")
-            return True
-        else:
-            print(f"Error downloading the file. Status code: {response.status_code}")
-        return False
 
     def prombt(self):
         self.plug = self.com.split("/")[-1]
