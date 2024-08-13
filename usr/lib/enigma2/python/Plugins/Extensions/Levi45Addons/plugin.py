@@ -68,7 +68,7 @@ except:
 
 
 # set
-currversion = '10.1-r21'
+currversion = '10.1-r22'
 name_plug = 'Levi45 Addon'
 desc_plug = 'Satellite-Forum.com Addons %s' % currversion
 plugin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/{}".format('Levi45Addons'))
@@ -504,10 +504,13 @@ class AddonPackages(Screen):
 
     def prombt(self):
         self.plug = self.com.split("/")[-1]
+        dest = "/tmp"
+        if not os.path.exists(dest):
+            os.system('ln -sf  /var/volatile/tmp /tmp')
         self.folddest = '/tmp/' + self.plug
-
+        cmd2 = ''
         if ".deb" in self.plug:
-            cmd2 = "dpkg -i '/tmp/" + self.plug + "'"
+            cmd2 = "dpkg -i /tmp/" + self.plug  # + "'"
         if ".ipk" in self.plug:
             cmd2 = "opkg install --force-reinstall --force-overwrite '/tmp/" + self.plug + "'"
         elif ".zip" in self.plug:
@@ -516,9 +519,9 @@ class AddonPackages(Screen):
             cmd2 = "tar -xvf '/tmp/" + self.plug + "' -C /"
         elif ".bz2" in self.plug and "gz" in self.plug:
             cmd2 = "tar -xjvf '/tmp/" + self.plug + "' -C /"
-        cmd3 = "rm '/tmp/" + self.plug + "'"
-        cmd = cmd2 + " && " + cmd3
-
+        else:
+            return
+        cmd = cmd2  #+ " && "  # + cmd3
         cmd00 = "wget --no-check-certificate -U '%s' -c '%s' -O '%s';%s > /dev/null" % (AgentRequest, str(self.com), self.folddest, cmd)
 
         title = (_("Installing %s\nPlease Wait...") % self.dom)
