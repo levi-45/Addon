@@ -11,6 +11,7 @@
 from __future__ import print_function
 # local import
 from . import Utils
+from .Console import Console
 from . import (
     _,
     wgetsts,
@@ -27,7 +28,7 @@ from Components.Label import Label
 from Components.MenuList import MenuList
 from Components.ScrollLabel import ScrollLabel
 from Plugins.Plugin import PluginDescriptor
-from Screens.Console import Console
+# from Screens.Console import Console
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Tools.Directories import (
@@ -68,7 +69,7 @@ except:
 
 
 # set
-currversion = '10.1-r22'
+currversion = '10.1-r23'
 name_plug = 'Levi45 Addon'
 desc_plug = 'Satellite-Forum.com Addons %s' % currversion
 plugin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/{}".format('Levi45Addons'))
@@ -359,7 +360,13 @@ class AddonsGroups(Screen):
 
     def install_update(self, answer=False):
         if answer:
-            self.session.open(Console, 'Upgrading...', cmdlist=('wget -q "--no-check-certificate" ' + Utils.b64decoder(installer_url) + ' -O - | /bin/sh'), finishedCallback=self.myCallback, closeOnSuccess=False)
+            srtrt = Utils.b64decoder(installer_url)
+            cmd = 'wget -q "--no-check-certificate" ' + str(srtrt) + ' -O - | /bin/sh'
+            # self.session.open(Console, 'Upgrading...', cmdlist=('wget -q "--no-check-certificate" ' + Utils.b64decoder(installer_url) + ' -O - | /bin/sh'), finishedCallback=self.myCallback, closeOnSuccess=False)
+            # self.session.open(Console, 'Upgrading...', cmdlist=[cmd], finishedCallback=self.myCallback, closeOnSuccess=False)
+            title = _("Upgrading...\nPlease Wait...")
+            self.session.open(Console, _(title), [cmd], closeOnSuccess=False)
+            # self.session.open(Console, 'Upgrading...', cmdlist=('wget -q "--no-check-certificate" https://raw.githubusercontent.com/levi-45/Addon/main/installer.sh -O - | /bin/sh'), finishedCallback=self.myCallback, closeOnSuccess=False)
         else:
             self.session.open(MessageBox, _("Update Aborted!"),  MessageBox.TYPE_INFO, timeout=3)
 
