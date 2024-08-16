@@ -2,9 +2,10 @@
 
 ## setup command=wget -q "--no-check-certificate" https://raw.githubusercontent.com/levi-45/Addon/main/installer.sh -O - | /bin/sh
 ## Only This 2 lines to edit with new version ######
-version='10.1-r22'
-changelog='Fix All known issues'
+version='10.1_r22'
+changelog='Fix Upgrade'
 ##
+
 TMPPATH=/tmp/Addon-main
 FILEPATH=/tmp/main.tar.gz
 
@@ -13,15 +14,6 @@ if [ ! -d /usr/lib64 ]; then
 else
 	PLUGINPATH=/usr/lib64/enigma2/python/Plugins/Extensions/Levi45Addons
 fi
-
-## Remove tmp directory
-[ -r $TMPPATH ] && rm -f $TMPPATH > /dev/null 2>&1
-
-## Remove tmp directory
-[ -r $FILEPATH ] && rm -f $FILEPATH > /dev/null 2>&1
-
-## Remove old plugin directory
-[ -r $PLUGINPATH ] && rm -rf $PLUGINPATH
 
 ## check depends packges
 if [ -f /var/lib/dpkg/status ]; then
@@ -66,6 +58,14 @@ else
 fi
 echo ""
 
+## Remove tmp directory
+[ -r $TMPPATH ] && rm -f $TMPPATH > /dev/null 2>&1
+
+## Remove tmp directory
+[ -r $FILEPATH ] && rm -f $FILEPATH > /dev/null 2>&1
+
+## Remove old plugin directory
+[ -r $PLUGINPATH ] && rm -rf $PLUGINPATH
 
 ## Download and install plugin
 ## check depends packges
@@ -81,10 +81,10 @@ else
 fi
 
 sleep 2
-wget --no-check-certificate 'https://github.com/levi-45/Addon/archive/refs/heads/main.tar.gz'
+wget --no-check-certificate --no-cache --no-dns-cache 'https://github.com/levi-45/Addon/archive/refs/heads/main.tar.gz'
 tar -xzf main.tar.gz
 cp -r 'Addon-main/usr' '/'
-## cp -r 'Addon-main/etc' '/'
+## cp -r 'Levi45Addons-main/etc' '/'
 set +e
 cd
 sleep 2
@@ -92,6 +92,7 @@ sleep 2
 ## Check if plugin installed correctly
 if [ ! -d $PLUGINPATH ]; then
 	echo "Some thing wrong .. Plugin not installed"
+	rm -rf $TMPPATH > /dev/null 2>&1
 	exit 1
 fi
 
@@ -100,10 +101,10 @@ sync
 echo ""
 echo ""
 echo "#########################################################"
-echo "#         Levi45Addons INSTALLED SUCCESSFULLY           #"
+echo "#        	Levi45Addons INSTALLED SUCCESSFULLY     	  #"
 echo "#                developed by LULULLA                   #"
 echo "#                                                       #"
-echo "#            https://satellite-forum.com                #"
+echo "#                  https://corvoboys.org                #"
 echo "#########################################################"
 echo "#           your Device will RESTART Now                #"
 echo "#########################################################"
