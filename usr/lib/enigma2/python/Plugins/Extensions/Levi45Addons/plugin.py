@@ -378,7 +378,7 @@ class AddonsGroups(Screen):
         url = epk
         if os.path.exists('/var/lib/dpkg/info'):
             print('have a dreamOs!!!')
-            url = Utils.b64decoder(edeb)
+            url = epk  # url = Utils.b64decoder(edeb)
         else:
             # url = Utils.b64decoder(epk)
             print('have a Atv-PLi - etc..!!!')
