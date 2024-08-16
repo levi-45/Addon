@@ -3,7 +3,7 @@
 ## setup command=wget -q "--no-check-certificate" https://raw.githubusercontent.com/levi-45/Addon/main/installer.sh -O - | /bin/sh
 ## Only This 2 lines to edit with new version ######
 version='10.1-r23'
-changelog='Fix Update issue'
+changelog='Fix Update and Dreambox issues'
 ##
 TMPPATH=/tmp/Addon-main
 FILEPATH=/tmp/main.tar.gz
