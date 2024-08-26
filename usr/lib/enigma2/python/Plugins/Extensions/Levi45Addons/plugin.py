@@ -69,7 +69,7 @@ except:
 
 
 # set
-currversion = '10.1-r23'
+currversion = '10.1-r24'
 name_plug = 'Levi45 Addon'
 desc_plug = 'Satellite-Forum.com Addons %s' % currversion
 plugin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/{}".format('Levi45Addons'))
@@ -253,6 +253,8 @@ class AddonsGroups(Screen):
     def __init__(self, session):
         Screen.__init__(self, session)
         skin = os.path.join(skin_path, 'AddonsGroups.xml')
+        if os.path.exists("/var/lib/dpkg/status"):
+            skin = os.path.join(skin_path, 'AddonsGroupsCvs.xml')
         with codecs.open(skin, "r", encoding="utf-8") as f:
             self.skin = f.read()
         self['key_red'] = Button(_('Exit'))
@@ -270,8 +272,8 @@ class AddonsGroups(Screen):
         self.icount = 0
         self['info'].setText(_('Welcome , Please Wait..'))
         # self.epk = Utils.b64decoder(eeppkk)
-        self.epk = eeppkk
-        self.edb = Utils.b64decoder(eeddeebb)
+        self.epk = epk
+        # self.edb = Utils.b64decoder(eeddeebb)
         self.timer = eTimer()
         if os.path.exists('/var/lib/dpkg/info'):
             self.timer_conn = self.timer.timeout.connect(self.downloadxmlpage)
@@ -363,10 +365,8 @@ class AddonsGroups(Screen):
             srtrt = Utils.b64decoder(installer_url)
             cmd = 'wget -q "--no-check-certificate" ' + str(srtrt) + ' -O - | /bin/sh'
             # self.session.open(Console, 'Upgrading...', cmdlist=('wget -q "--no-check-certificate" ' + Utils.b64decoder(installer_url) + ' -O - | /bin/sh'), finishedCallback=self.myCallback, closeOnSuccess=False)
-            # self.session.open(Console, 'Upgrading...', cmdlist=[cmd], finishedCallback=self.myCallback, closeOnSuccess=False)
             title = _("Upgrading...\nPlease Wait...")
             self.session.open(Console, _(title), [cmd], closeOnSuccess=False)
-            # self.session.open(Console, 'Upgrading...', cmdlist=('wget -q "--no-check-certificate" https://raw.githubusercontent.com/levi-45/Addon/main/installer.sh -O - | /bin/sh'), finishedCallback=self.myCallback, closeOnSuccess=False)
         else:
             self.session.open(MessageBox, _("Update Aborted!"),  MessageBox.TYPE_INFO, timeout=3)
 
@@ -382,16 +382,16 @@ class AddonsGroups(Screen):
 
     def downloadxmlpage(self):
         # url = Utils.b64decoder(epk)
-        url = epk
-        if os.path.exists('/var/lib/dpkg/info'):
-            print('have a dreamOs!!!')
-            url = epk  # url = Utils.b64decoder(edeb)
-        else:
-            # url = Utils.b64decoder(epk)
-            print('have a Atv-PLi - etc..!!!')
+        url = self.epk
         if PY3:
             url = url.encode()
-        getPage(url).addCallback(self._gotPageLoad).addErrback(self.errorLoad)
+        if os.path.exists('/var/lib/dpkg/info'):
+            print('have a dreamOs!!!')
+            self.data = checkGZIP(url)
+            self._gotPageLoad(self.data)
+        else:
+            print('have a Atv-PLi - etc..!!!')                                  
+            getPage(url).addCallback(self._gotPageLoad).addErrback(self.errorLoad)
 
     def errorLoad(self, error):
         print('are here error:', str(error))
@@ -410,7 +410,6 @@ class AddonsGroups(Screen):
                 self['info'].setText('Select')
                 # self["list"].l.setItemHeight(50)
                 self["list"].l.setList(self.names)
-                # xxccnn(self.names, self["list"])
         except:
             self['info'].setText(_('Error processing server addons data'))
         try:
@@ -420,11 +419,8 @@ class AddonsGroups(Screen):
             print(e)
 
     def okClicked(self):
-        try:
-            selection = str(self['list'].getCurrent())
-            self.session.open(AddonPackages, self.xmlparse, selection)
-        except:
-            return
+        selection = str(self['list'].getCurrent())
+        self.session.open(AddonPackages, self.xmlparse, selection)
 
 
 class AddonPackages(Screen):
@@ -432,6 +428,8 @@ class AddonPackages(Screen):
     def __init__(self, session, xmlparse, selection):
         Screen.__init__(self, session)
         skin = os.path.join(skin_path, 'AddonPackages.xml')
+        if os.path.exists("/var/lib/dpkg/status"):
+            skin = os.path.join(skin_path, 'AddonPackagesCvs.xml')
         with codecs.open(skin, "r", encoding="utf-8") as f:
             self.skin = f.read()
         self.xmlparse = xmlparse
@@ -528,11 +526,48 @@ class AddonPackages(Screen):
             cmd2 = "tar -xjvf '/tmp/" + self.plug + "' -C /"
         else:
             return
-        cmd = cmd2  #+ " && "  # + cmd3
+        cmd = cmd2  # + " && "  # + cmd3
         cmd00 = "wget --no-check-certificate -U '%s' -c '%s' -O '%s';%s > /dev/null" % (AgentRequest, str(self.com), self.folddest, cmd)
 
         title = (_("Installing %s\nPlease Wait...") % self.dom)
         self.session.open(Console, _(title), [cmd00], closeOnSuccess=False)
+
+
+def checkGZIP(url):
+    url = url
+    from io import StringIO
+    import gzip
+    import requests
+    import sys
+    if sys.version_info[0] == 3:
+        from urllib.request import (urlopen, Request)
+        # unicode = str
+        # PY3 = True
+    else:
+        from urllib2 import (urlopen, Request)
+    hdr = {"User-Agent": AgentRequest}
+    response = None
+    request = Request(url, headers=hdr)
+    try:
+        response = urlopen(request, timeout=10)
+        if response.info().get('Content-Encoding') == 'gzip':
+            buffer = StringIO(response.read())
+            deflatedContent = gzip.GzipFile(fileobj=buffer)
+            if sys.version_info[0] == 3:
+                return deflatedContent.read().decode('utf-8')
+            else:
+                return deflatedContent.read()
+        else:
+            if sys.version_info[0] == 3:
+                return response.read().decode('utf-8')
+            else:
+                return response.read()
+
+    except requests.exceptions.RequestException as e:
+        print("Request error:", e)
+    except Exception as e:
+        print("Unexpected error:", e)
+    return None
 
 
 def main(session, **kwargs):
