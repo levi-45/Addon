@@ -24,6 +24,7 @@ from . import (
 
 from Components.ActionMap import ActionMap
 from Components.Button import Button
+from Components.config import config
 from Components.Label import Label
 from Components.MenuList import MenuList
 from Components.ScrollLabel import ScrollLabel
@@ -69,7 +70,7 @@ except:
 
 
 # set
-currversion = '10.1-r24'
+currversion = '10.1-r25'
 name_plug = 'Levi45 Addon'
 desc_plug = 'Satellite-Forum.com Addons %s' % currversion
 plugin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/{}".format('Levi45Addons'))
@@ -390,7 +391,7 @@ class AddonsGroups(Screen):
             self.data = checkGZIP(url)
             self._gotPageLoad(self.data)
         else:
-            print('have a Atv-PLi - etc..!!!')                                  
+            print('have a Atv-PLi - etc..!!!')
             getPage(url).addCallback(self._gotPageLoad).addErrback(self.errorLoad)
 
     def errorLoad(self, error):
@@ -406,6 +407,9 @@ class AddonsGroups(Screen):
             if self.xml:
                 self.xmlparse = minidom.parseString(self.xml)
                 for plugins in self.xmlparse.getElementsByTagName('plugins'):
+                    if config.ParentalControl.configured.value:
+                        if 'adult' in str(plugins.getAttribute('cont')).lower():
+                            continue
                     self.names.append(str(plugins.getAttribute('cont')))
                 self['info'].setText('Select')
                 # self["list"].l.setItemHeight(50)
