@@ -4,11 +4,12 @@
 # --------------------#
 #   coded by Lululla  #
 #    Up Levi45        #
-#      01/07/2024     #
+#      01/09/2024     #
 #       No coppy      #
 # --------------------#
 # Info http://Satellite-Forum.com
 from __future__ import print_function
+
 # local import
 from . import Utils
 from .Console import Console
@@ -16,43 +17,50 @@ from . import (
     _,
     wgetsts,
     getfreespace,
-    MYIPK,
-    MYDEB,
-    adxdeb,
+    installer_url,
+    developer_url,
+    epk,
+    # MYIPK,
+    # MYDEB,
+    # adxdeb,
     # adxipk,
 )
 
+# enigma2 lib import
 from Components.ActionMap import ActionMap
 from Components.Button import Button
 from Components.config import config
 from Components.Label import Label
 from Components.MenuList import MenuList
 from Components.ScrollLabel import ScrollLabel
+from datetime import datetime
+from enigma import (eTimer, getDesktop)
 from Plugins.Plugin import PluginDescriptor
-# from Screens.Console import Console
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Tools.Directories import (
     SCOPE_PLUGINS,
-    # fileExists,
     resolveFilename,
 )
-from enigma import (eTimer, getDesktop)
 from twisted.web.client import getPage
 from xml.dom import minidom
 import codecs
 import os
+import socket
 import sys
+import time
 import json
-from datetime import datetime
+
 
 PY3 = sys.version_info.major >= 3
-if PY3:
-    from urllib.request import (urlopen, Request)
-    unicode = str
-    PY3 = True
+# Compatibility handling for urlopen
+if sys.version_info[0] < 3:
+    from urllib2 import urlopen, Request, URLError
+    PY3 = False
 else:
-    from urllib2 import (urlopen, Request)
+    from urllib.request import urlopen, Request
+    from urllib.error import URLError
+    PY3 = True
 
 
 if sys.version_info >= (2, 7, 9):
@@ -70,14 +78,18 @@ except:
 
 
 # set
-currversion = '10.1-r25'
+currversion = '10.1-r26'
 name_plug = 'Levi45 Addon'
 desc_plug = 'Satellite-Forum.com Addons %s' % currversion
 plugin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/{}".format('Levi45Addons'))
+iconx = 'plugin.png'
+AgentRequest = Utils.RequestAgent()
+'''
 eeppkk = MYIPK.replace('+', '').replace('-', '')
 eeddeebb = MYDEB.replace('+', '').replace('-', '')
-iconx = 'plugin.png'
-
+epk = adxipk.replace('+', '').replace('-', '')
+edeb = adxdeb.replace('+', '').replace('-', '')
+'''
 screenwidth = getDesktop(0).size()
 if screenwidth.width() == 2560:
     skin_path = plugin_path + '/res/skins/uhd/'
@@ -86,19 +98,8 @@ elif screenwidth.width() == 1920:
 else:
     skin_path = plugin_path + '/res/skins/hd/'
 
-AgentRequest = Utils.RequestAgent()
-# epk = adxipk.replace('+', '').replace('-', '')
-edeb = adxdeb.replace('+', '').replace('-', '')
 
-# linuxsat panel
-epk = 'https://github.com/Belfagor2005/upload/raw/main/fill/addons_2024.xml'
-
-installer_url = 'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2xldmktNDUvQWRkb24vbWFpbi9pbnN0YWxsZXIuc2g='
-developer_url = 'aHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS9yZXBvcy9sZXZpLTQ1L0FkZG9u'
-
-# _firstStartlevisaddon = True
 isDreamOS = False
-
 if os.path.exists("/var/lib/dpkg/status"):
     isDreamOS = True
 
@@ -149,7 +150,6 @@ class addonsupdatesScreen(Screen):
             self.skin = f.read()
         info = 'Please Wait..'
         self.labeltext = ('')
-        self['text'] = ScrollLabel(info)
         self['actions'] = ActionMap(['OkCancelActions',
                                      'ColorActions',
                                      'DirectionActions'], {'cancel': self.close,
@@ -160,18 +160,40 @@ class addonsupdatesScreen(Screen):
                                                            'left': self.Up,
                                                            'right': self.Down,
                                                            }, -1)
-        try:
-            fp = urlopen('http://levi45.spdns.eu/Addons/AddonsPanel/News.txt')
-            lines = fp.readlines()
-            for line in lines:
-                if PY3:
-                    line = line.decode()
-                self.labeltext += str(line)
-            fp.close()
-            self['text'].setText(self.labeltext)
-        except Exception as e:
-            print(e)
-            self['text'].setText(_('unable to download updates'))
+        self['text'] = ScrollLabel(info)
+
+        def fetch_url(url, retries=3, initial_timeout=5):
+            timeout = initial_timeout
+            for i in range(retries):
+                try:
+                    fp = urlopen(url, timeout=timeout)
+                    lines = fp.readlines()
+                    fp.close()
+                    labeltext = ""
+                    for line in lines:
+                        if PY3:
+                            line = line.decode()  # Decode bytes to str in Python 3
+                        labeltext += str(line)
+                    return labeltext
+                except socket.timeout:
+                    print("Attempt failed: The connection timed out after %s seconds." % timeout)
+                    timeout *= 2  # Double the timeout for the next attempt
+                except URLError as e:
+                    print("URL Error:", e)
+                    break
+                except Exception as e:
+                    print("Error:", e)
+                    break
+            return None
+
+        # Use the feature to get the text and update the interface
+        # labeltext = fetch_url('http://levi45.spdns.eu/Addons/AddonsPanel/News.txt')
+        labeltext = fetch_url('https://raw.githubusercontent.com/levi-45/Addon/main/News.txt')
+        if labeltext:
+            self['text'].setText(labeltext)
+        else:
+            self['text'].setText('unable to download updates')
+
 
     def ok(self):
         self.close()
@@ -265,33 +287,19 @@ class AddonsGroups(Screen):
         self['key_blue'] = Button(_('About'))
         self.list = []
         self.names = []
-        # self['list'] = leviList([])
         self['list'] = MenuList([])
         self['info'] = Label()
         self['fspace'] = Label()
         self.addon = 'emu'
         self.icount = 0
         self['info'].setText(_('Welcome , Please Wait..'))
-        # self.epk = Utils.b64decoder(eeppkk)
         self.epk = epk
-        # self.edb = Utils.b64decoder(eeddeebb)
         self.timer = eTimer()
         if os.path.exists('/var/lib/dpkg/info'):
             self.timer_conn = self.timer.timeout.connect(self.downloadxmlpage)
         else:
             self.timer.callback.append(self.downloadxmlpage)
         self.timer.start(500, 1)
-        '''
-        self['actions'] = ActionMap(['OkCancelActions',
-                                     'ColorActions'], {'ok': self.okClicked,
-                                                       'green': self.pluginupdate,
-                                                       'blue': self.ShowAbout,
-                                                       'yellow': self.shownews,
-                                                       'red': self.close,
-                                                       'back': self.close,
-                                                       'cancel': self.close
-                                                       }, -2)
-        '''
         self['actions'] = ActionMap(['OkCancelActions',
                                      'ColorActions',
                                      'DirectionActions',
@@ -382,7 +390,6 @@ class AddonsGroups(Screen):
         self.session.open(addonsupdatesScreen)
 
     def downloadxmlpage(self):
-        # url = Utils.b64decoder(epk)
         url = self.epk
         if PY3:
             url = url.encode()
@@ -397,7 +404,6 @@ class AddonsGroups(Screen):
     def errorLoad(self, error):
         print('are here error:', str(error))
         self['info'].setText(_('Addons Download Failure\nNo internet connection or server down !'))
-        # self.downloading = False
 
     def _gotPageLoad(self, data):
         self.xml = data
@@ -410,6 +416,14 @@ class AddonsGroups(Screen):
                     if config.ParentalControl.configured.value:
                         if 'adult' in str(plugins.getAttribute('cont')).lower():
                             continue
+                    if not os.path.exists('/var/lib/dpkg/info'):
+                        if 'dreamos' in str(plugins.getAttribute('cont')).lower():
+                            continue
+
+                    if os.path.exists('/var/lib/dpkg/info'):
+                        if 'dreamos' not in str(plugins.getAttribute('cont')).lower():
+                            continue                        
+                    
                     self.names.append(str(plugins.getAttribute('cont')))
                 self['info'].setText('Select')
                 # self["list"].l.setItemHeight(50)
@@ -528,13 +542,9 @@ class AddonPackages(Screen):
             cmd2 = "tar -xvf '/tmp/" + self.plug + "' -C /"
         elif ".bz2" in self.plug and "gz" in self.plug:
             cmd2 = "tar -xjvf '/tmp/" + self.plug + "' -C /"
-        else:
-            return
-        cmd = cmd2  # + " && "  # + cmd3
-        cmd00 = "wget --no-check-certificate -U '%s' -c '%s' -O '%s';%s > /dev/null" % (AgentRequest, str(self.com), self.folddest, cmd)
-
+        cmd = "wget --no-check-certificate -U '%s' -c '%s' -O '%s';%s > /dev/null" % (AgentRequest, str(self.com), self.folddest, cmd2)
         title = (_("Installing %s\nPlease Wait...") % self.dom)
-        self.session.open(Console, _(title), [cmd00], closeOnSuccess=False)
+        self.session.open(Console, _(title), [cmd], closeOnSuccess=False)
 
 
 def checkGZIP(url):
@@ -545,8 +555,6 @@ def checkGZIP(url):
     import sys
     if sys.version_info[0] == 3:
         from urllib.request import (urlopen, Request)
-        # unicode = str
-        # PY3 = True
     else:
         from urllib2 import (urlopen, Request)
     hdr = {"User-Agent": AgentRequest}

@@ -12,6 +12,10 @@ MYIPK = 'aHR0c+Dov+L2xldmk0-NS5zcGR+ucy5ldS9B-ZGRvbnMv+TGV2aTQ1Q-WRkb25zdXB+kYXR
 MYDEB = 'aHR0c+DovL2x+ldmk0NS+5zcGRu-cy5ldS9-BZGRvbnN+EZWIvTGV2-aTQ1Q-WRkb25zU+GFuZW-x1cGRhdGU='
 adxipk = 'aHR0c+DovL2xldmk-0NS5zcGRu-cy5ldS9B-ZGRv+bnMvQ+WRkb25zUG+F+uZWwvYW-Rkb25zLnhtbA=='
 adxdeb = 'aHR0c+DovL2xldmk+0NS5+zcGRucy-5ld-S9BZGRvb+nMvQWRk-+b25zUGFuZW+xEZ-WIvY-WRkb25-zZGViLnhtbA=='
+installer_url = 'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2xldmktNDUvQWRkb24vbWFpbi9pbnN0YWxsZXIuc2g='
+developer_url = 'aHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS9yZXBvcy9sZXZpLTQ1L0FkZG9u'
+epk = 'https://github.com/Belfagor2005/upload/raw/main/fill/addons_2024.xml'
+
 isDreamOS = False
 if os.path.exists("/var/lib/dpkg/status"):
     isDreamOS = True
