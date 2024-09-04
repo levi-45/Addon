@@ -2,6 +2,7 @@ Satellite-Forum.Com
 
 levi45 Addons Panel UPDATE 04-09-2024
 -------------------------------------------------------------------------
+enigma2-plugin-softcams-oscam-emu-levi45_11824-802_all.ipk
 enigma2-plugin-extensions-chocholousek-picons_5.0.240904_all.deb
 enigma2-plugin-extensions-chocholousek-picons_5.0.240904_all.ipk
 enigma2-plugin-extensions-hdfradio_2.13.3_py3_3.11.2_cortexa7hf-vfp.ipk
@@ -15,6 +16,9 @@ enigma2-plugin-extensions-hdfradio_2.13.3_py3_3.12_mips32el.ipk
 enigma2-plugin-extensions-ts-sateditor_4.0_all.ipk
 enigma2-plugin-skins-aglare-fhd-pli_4.0_all.ipk
 enigma2-plugin-skins-odreamy-fhd_2.6_all.ipk
+-------------------------------------------------------------------------
+enigma2-plugin-softcams-oscam-emu-levi45_11824-802_all.deb
+-------------------------------------------------------------------------
 
 levi45 Addons Panel UPDATE 07-08-2024
 -------------------------------------------------------------------------
