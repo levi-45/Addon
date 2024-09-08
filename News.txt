@@ -1,5 +1,26 @@
 Satellite-Forum.Com
 
+levi45 Addons Panel UPDATE 08-09-2024
+-------------------------------------------------------------------------
+enigma2-plugin-extensions-apod_1.1_all.ipk
+enigma2-plugin-extensions-hdfradio_2.13.7_py3_3.11.2_cortexa7hf-vfp.ipk
+enigma2-plugin-extensions-hdfradio_2.13.7_py3_3.11.2_cortexa9hf-neon.ipk
+enigma2-plugin-extensions-hdfradio_2.13.7_py3_3.11.2_cortexa15hf-neon-vfpv4.ipk
+enigma2-plugin-extensions-hdfradio_2.13.7_py3_3.11.2_mips32el.ipk
+enigma2-plugin-extensions-hdfradio_2.13.7_py3_3.12_cortexa7hf-vfp.ipk
+enigma2-plugin-extensions-hdfradio_2.13.7_py3_3.12_cortexa9hf-neon.ipk
+enigma2-plugin-extensions-hdfradio_2.13.7_py3_3.12_cortexa15hf-neon-vfpv4.ipk
+enigma2-plugin-extensions-hdfradio_2.13.7_py3_3.12_mips32el.ipk
+enigma2-plugin-extensions-iptvarchive_2.0.85_all.ipk
+enigma2-plugin-extensions-noipautologin_0.3-r0_all.ipk
+enigma2-plugin-extensions-noipdyndns-modded_experimental-1.31_all.ipk
+enigma2-plugin-extensions-xstreamity_4.58.20240907_all.ipk
+-------------------------------------------------------------------------
+enigma2-plugin-extensions-apod_1.1_all.deb
+enigma2-plugin-extensions-iptvarchive_2.0.85_all.deb
+enigma2-plugin-extensions-xstreamity_4.58_20240907_all.deb
+-------------------------------------------------------------------------
+
 levi45 Addons Panel UPDATE 04-09-2024
 -------------------------------------------------------------------------
 enigma2-plugin-softcams-oscam-emu-levi45_11824-802_all.ipk
