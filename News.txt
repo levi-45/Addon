@@ -15,10 +15,13 @@ enigma2-plugin-extensions-iptvarchive_2.0.85_all.ipk
 enigma2-plugin-extensions-noipautologin_0.3-r0_all.ipk
 enigma2-plugin-extensions-noipdyndns-modded_experimental-1.31_all.ipk
 enigma2-plugin-extensions-xstreamity_4.58.20240907_all.ipk
+enigma2-plugin-extensions-screengrabber_2.7_all.ipk
+enigma2-plugin-extensions-xklass_1.13.20240908_all.ipk
 -------------------------------------------------------------------------
 enigma2-plugin-extensions-apod_1.1_all.deb
 enigma2-plugin-extensions-iptvarchive_2.0.85_all.deb
 enigma2-plugin-extensions-xstreamity_4.58_20240907_all.deb
+enigma2-plugin-extensions-xklass_1.13.20240908_all.deb
 -------------------------------------------------------------------------
 
 levi45 Addons Panel UPDATE 04-09-2024
