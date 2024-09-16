@@ -2,12 +2,19 @@ Satellite-Forum.Com
 
 levi45 Addons Panel UPDATE 16-09-2024
 -------------------------------------------------------------------------
-enigma2-plugin-softcams-oscam-emu-levi45_11830-802_all.ipk
+enigma2-plugin-softcams-oscam-emu-levi45_11833-802_all.ipk
+-------------------------------------------------------------------------
+enigma2-plugin-softcams-oscam-emu-levi45_11833-802_all.deb
+-------------------------------------------------------------------------
+
+levi45 Addons Panel UPDATE 16-09-2024
+-------------------------------------------------------------------------
+enigma2-plugin-softcams-oscam-emu-levi45_11832-802_all.ipk
 enigma2-plugin-extensions-bouquetmakerxtream_1.25.20240915_all.ipk
 enigma2-plugin-extensions-xklass_1.15.20240915_all.ipk
 enigma2-plugin-extensions-xstreamity_4.59.20240915_all.ipk
 -------------------------------------------------------------------------
-enigma2-plugin-softcams-oscam-emu-levi45_11830-802_all.deb
+enigma2-plugin-softcams-oscam-emu-levi45_11832-802_all.deb
 enigma2-plugin-extensions-xstreamity_4.59_20240915_all.deb
 enigma2-plugin-extensions-bouquetmakerxtream_1.25_20240915_all.deb
 enigma2-plugin-extensions-xklass_1.15_20240915_all.deb
