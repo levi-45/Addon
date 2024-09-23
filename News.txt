@@ -1,5 +1,31 @@
 Satellite-Forum.Com
 
+levi45 Addons Panel UPDATE 23-09-2024
+-------------------------------------------------------------------------
+enigma2-plugin-extensions-cerashlogviewer_1.4_all.ipk
+enigma2-plugin-extensions-hdfradio_2.14.1_py2_cortexa7hf-vfp.ipk
+enigma2-plugin-extensions-hdfradio_2.14.1_py2_cortexa9hf-neon-vfpv4.ipk
+enigma2-plugin-extensions-hdfradio_2.14.1_py2_cortexa15hf-neon-vfpv4.ipk
+enigma2-plugin-extensions-hdfradio_2.14.1_py2_mips32el.ipk
+enigma2-plugin-extensions-hdfradio_2.14.1_py3_3.11.2_cortexa7hf-vfp.ipk
+enigma2-plugin-extensions-hdfradio_2.14.1_py3_3.11.2_cortexa9hf-neon.ipk
+enigma2-plugin-extensions-hdfradio_2.14.1_py3_3.11.2_cortexa15hf-neon-vfpv4.ipk
+enigma2-plugin-extensions-hdfradio_2.14.1_py3_3.11.2_mips32el.ipk
+enigma2-plugin-extensions-hdfradio_2.14.1_py3_3.12_cortexa7hf-vfp.ipk
+enigma2-plugin-extensions-hdfradio_2.14.1_py3_3.12_cortexa9hf-neon.ipk
+enigma2-plugin-extensions-hdfradio_2.14.1_py3_3.12_cortexa15hf-neon-vfpv4.ipk
+enigma2-plugin-extensions-hdfradio_2.14.1_py3_3.12_mips32el.ipk
+enigma2-plugin-skins-aglare-fhd_4.3_all.ipk
+enigma2-plugin-skins-diana-fhd_3.3_all.ipk
+enigma2-plugin-softcams-oscamicamnew_11836-ICAMEMU-Kitte888-V9Rev_all.ipk
+-------------------------------------------------------------------------
+enigma2-plugin-extensions-screengrabber_3.1_all.deb
+enigma2-plugin-extensions-crashlogviewer_1.4_all.deb
+enigma2-skin-hdsuisse.2k_3.8_all.deb
+enigma2-skin-hdsuisse.fhd_merlin_10.4_all.deb
+enigma2-skin-hdsuisse.one4all.fhd_10.4_all.deb
+-------------------------------------------------------------------------
+
 levi45 Addons Panel UPDATE 20-09-2024
 -------------------------------------------------------------------------
 enigma2-plugin-softcams-oscam-emu-levi45_11836-802_all.ipk
