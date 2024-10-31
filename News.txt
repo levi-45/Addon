@@ -1,24 +1,28 @@
 Satellite-Forum.Com
 
-levi45 Addons Panel UPDATE 22-10-2024
+levi45 Addons Panel UPDATE 31-10-2024
 -------------------------------------------------------------------------
-enigma2-plugin-extensions-simple-zoom-panel_2.2.0_all.ipk
-enigma2-plugin-extensions-e2m3u2bouquet_1.8.8_all.ipk
-enigma2-plugin-extensions-cacheflush_2.1_all.ipk
-enigma2-plugin-extensions-linuxsat-panel_2.5_all.ipk
-enigma2-plugin-extensions-advancedeventlibrary_1.0r141_all.ipk
-enigma2-plugin-extensions-bouquetmakerxtream_1.28.20241021_all.ipk
-enigma2-plugin-skins-artemis-mod-dragon_8.5.poster.backdrop_all.ipk
-enigma2-plugin-extensions-wireguard-vpn_11.6_all.ipk
-enigma2-plugin-extensions-wireguard-vpn-aarch64_11.6_all.ipk
-enigma2-plugin-extensions-wireguard-vpn-mips_11.6_all.ipk
-enigma2-plugin-extensions-xtraevent_6.801_all.ipk
+enigma2-plugin-skins-xDreamy_3.9.1_all.ipk
+enigma2-plugin-skins-aglare-fhd-pli_4.5_all.ipk
+enigma2-plugin-extensions-subssupport_1.7.0-r7-py3_all.ipk
+enigma2-plugin-skins-aglare-fhd-pli_4.5_all.ipk
+enigma2-plugin-extensions-wireguard-vpn_11.7_all.ipk
+enigma2-plugin-extensions-wireguard-vpn-aarch64_11.7_all.ipk
+enigma2-plugin-extensions-wireguard-vpn-mips_11.7_all.ipk
+enigma2-plugin-extensions-bouquetmakerxtream_1.33.20241028_all.ipk
+enigma2-plugin-extensions-simple-zoom-panel-moded_2.2.2_all.ipk
+enigma2-plugin-extensions-subssupport_1.7.0-r8-py3_all.ipk
+enigma2-plugin-extensions-xstreamity_4.63.20241028_all.ipk
+enigma2-plugin-extensions-slykepg7day_2.11.20241030_all.ipk
+enigma2-plugin-extensions-visualweather_1.10.20241030_all.ipk
+enigma2-plugin-extensions-jediepgxtream_2.12.20241030_all.ipk
+enigma2-plugin-extensions-xklass_1.18.20241030_all.ipk
 -------------------------------------------------------------------------
-enigma2-plugin-extensions-linuxsat-panel_2.5_all.deb
-enigma2-plugin-extensions-cacheflush_2.1_all.deb
-enigma2-plugin-extensions-e2m3u2bouquet_1.8.8_all.deb
-enigma2-plugin-extensions-bouquetmakerxtream_1.28_20241021_all.deb
-enigma2-plugin-extensions-eventdatamanager_all.deb
-enigma2-plugin-extensions-simple-zoom-panel_2.2.0_all.deb
-enigma2-skin-hdsuisse.2k_4.1_all.deb
+enigma2-plugin-extensions-foreca_3.2.8_all.deb
+enigma2-plugin-extensions-bouquetmakerxtream_1.33_20241028_all.deb
+enigma2-plugin-extensions-simple-zoom-panel-moded_2.2.2_all.deb
+enigma2-plugin-extensions-xstreamity_4.63_20241028_all.deb
+enigma2-plugin-extensions-jediepgxtream_2.12_20241030_all.deb
+enigma2-plugin-extensions-visualweather_1.10_20241030_all.deb
+enigma2-plugin-extensions-xklass_1.18_20241030_all.deb
 -------------------------------------------------------------------------
