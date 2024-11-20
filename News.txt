@@ -1,25 +1,12 @@
 Satellite-Forum.Com
 
-levi45 Addons Panel UPDATE 09-11-2024
+levi45 Addons Panel UPDATE 20-11-2024
 -------------------------------------------------------------------------
-enigma2-plugin-extensions-hdfradio_2.16.5_py2_cortexa7hf-vfp.ipk
-enigma2-plugin-extensions-hdfradio_2.16.5_py2_cortexa9hf-neon-vfpv4.ipk
-enigma2-plugin-extensions-hdfradio_2.16.5_py2_cortexa15hf-neon-vfpv4.ipk
-enigma2-plugin-extensions-hdfradio_2.16.5_py2_mips32el.ipk
-enigma2-plugin-extensions-hdfradio_2.16.5_py3_3.12.6_cortexa7hf-vfp.ipk
-enigma2-plugin-extensions-hdfradio_2.16.5_py3_3.12.6_cortexa9hf-neon.ipk
-enigma2-plugin-extensions-hdfradio_2.16.5_py3_3.12.6_cortexa15hf-neon-vfpv4.ipk
-enigma2-plugin-extensions-hdfradio_2.16.5_py3_3.12.6_mips32el.ipk
-enigma2-plugin-extensions-hdfradio_2.16.5_py3_3.12_cortexa7hf-vfp.ipk
-enigma2-plugin-extensions-hdfradio_2.16.5_py3_3.12_cortexa9hf-neon.ipk
-enigma2-plugin-extensions-hdfradio_2.16.5_py3_3.12_cortexa15hf-neon-vfpv4.ipk
-enigma2-plugin-extensions-hdfradio_2.16.5_py3_3.12_mips32el.ipk
-enigma2-plugin-extensions-ipkuninstaller_1.3_all.ipk
-enigma2-plugin-extensions-subssupport_1.7.0-r10-py3_all.ipk
-enigma2-plugin-extensions-wireguard-vpn_12.1_all.ipk
-enigma2-plugin-extensions-wireguard-vpn-aarch64_12.1_all.ipk
-enigma2-plugin-extensions-wireguard-vpn-mips_12.1_all.ipk
-enigma2-plugin-extensions-wireguard-vpn-py3.9_12.1_all.ipk
+enigma2-plugin-extensions-levi45-addon_10.1-r27_all.ipk
+enigma2-plugin-extensions-levi45multicammanager_10.1-r33_all.ipk
+enigma2-plugin-softcams-oscam-emu-levi45_11856-802_all.ipk
 -------------------------------------------------------------------------
-
+enigma2-plugin-extensions-levi45-addon_10.1-r27_all.deb
+enigma2-plugin-extensions-levi45multicammanager_10.1-r33_all.deb
+enigma2-plugin-softcams-oscam-emu-levi45_11856-802_all.deb
 -------------------------------------------------------------------------
