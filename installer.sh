@@ -71,7 +71,7 @@ echo ""
 ## check depends packges
 mkdir -p $TMPPATH
 cd $TMPPATH
-set -e
+# set -e
 if [ -f /var/lib/dpkg/status ]; then
    echo "# Your image is OE2.5/2.6 #"
    echo ""
@@ -85,8 +85,8 @@ wget --no-check-certificate 'https://github.com/levi-45/Addon/archive/refs/heads
 tar -xzf main.tar.gz
 cp -r 'Addon-main/usr' '/'
 ## cp -r 'Levi45Addons-main/etc' '/'
-set +e
-cd
+# set +e
+# cd
 sleep 2
 
 ## Check if plugin installed correctly
