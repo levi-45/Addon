@@ -78,7 +78,7 @@ except:
 
 
 # set
-currversion = '10.1-r26'
+currversion = '10.1-r27'
 name_plug = 'Levi45 Addon'
 desc_plug = 'Satellite-Forum.com Addons %s' % currversion
 plugin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/{}".format('Levi45Addons'))
@@ -194,7 +194,6 @@ class addonsupdatesScreen(Screen):
         else:
             self['text'].setText('unable to download updates')
 
-
     def ok(self):
         self.close()
 
@@ -237,7 +236,7 @@ class AboutScreen(Screen):
     def arckget(self):
         zarcffll = ''
         try:
-            if os.path.exists('/var/lib/dpkg/info'):
+            if os.path.exists("/usr/bin/apt-get"):
                 zarcffll = os.popen('dpkg --print-architecture | grep -iE "arm|aarch64|mips|cortex|sh4|sh_4"').read().strip('\n\r')
             else:
                 zarcffll = os.popen('opkg print-architecture | grep -iE "arm|aarch64|mips|cortex|h4|sh_4"').read().strip('\n\r')
@@ -295,7 +294,7 @@ class AddonsGroups(Screen):
         self['info'].setText(_('Welcome , Please Wait..'))
         self.epk = epk
         self.timer = eTimer()
-        if os.path.exists('/var/lib/dpkg/info'):
+        if os.path.exists("/usr/bin/apt-get"):
             self.timer_conn = self.timer.timeout.connect(self.downloadxmlpage)
         else:
             self.timer.callback.append(self.downloadxmlpage)
@@ -393,7 +392,7 @@ class AddonsGroups(Screen):
         url = self.epk
         if PY3:
             url = url.encode()
-        if os.path.exists('/var/lib/dpkg/info'):
+        if os.path.exists("/usr/bin/apt-get"):
             print('have a dreamOs!!!')
             self.data = checkGZIP(url)
             self._gotPageLoad(self.data)
@@ -409,32 +408,38 @@ class AddonsGroups(Screen):
         self.xml = data
         self.list = []
         self.names = []
+
         try:
             if self.xml:
                 self.xmlparse = minidom.parseString(self.xml)
+                
                 for plugins in self.xmlparse.getElementsByTagName('plugins'):
-                    if config.ParentalControl.configured.value:
-                        if 'adult' in str(plugins.getAttribute('cont')).lower():
-                            continue
-                    if not os.path.exists('/var/lib/dpkg/info'):
-                        if 'dreamos' in str(plugins.getAttribute('cont')).lower():
-                            continue
+                    plugin_content = str(plugins.getAttribute('cont')).lower()
 
-                    if os.path.exists('/var/lib/dpkg/info'):
-                        if 'dreamos' not in str(plugins.getAttribute('cont')).lower():
-                            continue                        
-                    
+                    if config.ParentalControl.configured.value and 'adult' in plugin_content:
+                        continue
+
+                    if not os.path.exists("/usr/bin/apt-get") and 'oe2.2' in plugin_content:
+                        continue
+                    if os.path.exists("/usr/bin/apt-get") and 'oe2.2' not in plugin_content:
+                        continue
+
                     self.names.append(str(plugins.getAttribute('cont')))
-                self['info'].setText('Select')
-                # self["list"].l.setItemHeight(50)
-                self["list"].l.setList(self.names)
-        except:
+                
+                if self.names:
+                    self['info'].setText('Select')
+                    self["list"].l.setList(self.names)
+                else:
+                    self['info'].setText(_('No compatible plugins found'))
+        except Exception as e:
+            print('Error processing server addons data: ' + str(e))
             self['info'].setText(_('Error processing server addons data'))
+
         try:
             mfre = getfreespace()
             self['fspace'].setText(str(mfre))
         except Exception as e:
-            print(e)
+            print('Error getting free space: ' + str(e))
 
     def okClicked(self):
         selection = str(self['list'].getCurrent())
@@ -480,70 +485,75 @@ class AddonPackages(Screen):
         self.session.openWithCallback(self.selclicked, MessageBox, _('Do you install this plugin ?'), MessageBox.TYPE_YESNO)
 
     def selclicked(self, result):
-        if result:
-            try:
-                selection_country = self['countrymenu'].getCurrent()
-                for plugins in self.xmlparse.getElementsByTagName('plugins'):
-                    if str(plugins.getAttribute('cont')) == self.selection:
-                        for plugin in plugins.getElementsByTagName('plugin'):
-                            if str(plugin.getAttribute('name')) == selection_country:
-                                self.com = str(plugin.getElementsByTagName('url')[0].childNodes[0].data)
-                                self.dom = str(plugin.getAttribute('name'))
-                                # test lululla
-                                self.com = self.com.replace('"', '')
-                                if ".deb" in self.com:
-                                    if not os.path.exists('/var/lib/dpkg/info'):
-                                        self.session.open(MessageBox,
-                                                          _('Unknow Image!'),
-                                                          MessageBox.TYPE_INFO,
-                                                          timeout=5)
-                                        return
-                                    n2 = self.com.find("_", 0)
-                                    self.dom = self.com[:n2]
-
-                                if ".ipk" in self.com:
-                                    if os.path.exists('/var/lib/dpkg/info'):
-                                        self.session.open(MessageBox,
-                                                          _('Unknow Image!'),
-                                                          MessageBox.TYPE_INFO,
-                                                          timeout=5)
-                                        return
-                                    n2 = self.com.find("_", 0)
-                                    self.dom = self.com[:n2]
-                                elif ".zip" in self.com:
-                                    self.dom = self.com
-                                elif ".tar" in self.com or ".gz" in self.com or "bz2" in self.com:
-                                    self.dom = self.com
-                                print('self.prombt self.com: ', self.com)
-                                self.prombt()
-                            else:
-                                print('Return from prompt ')
-                                self['info'].setText('Select')
-                            continue
-            except Exception as e:
-                print('error prompt ', e)
-                self['info'].setText('Error')
-                return
+        if not result:
+            return
+        try:
+            selection_country = self['countrymenu'].getCurrent()
+            for plugins in self.xmlparse.getElementsByTagName('plugins'):
+                if str(plugins.getAttribute('cont')) == self.selection:
+                    for plugin in plugins.getElementsByTagName('plugin'):
+                        if str(plugin.getAttribute('name')) == selection_country:
+                            self.com = str(plugin.getElementsByTagName('url')[0].childNodes[0].data).replace('"', '')
+                            self.dom = str(plugin.getAttribute('name'))
+                            
+                            if ".deb" in self.com:
+                                if not os.path.exists("/usr/bin/apt-get"):
+                                    self.session.open(
+                                        MessageBox,
+                                        _('Unknown Image!'),
+                                        MessageBox.TYPE_INFO,
+                                        timeout=5
+                                    )
+                                    return
+                                n2 = self.com.find("_")
+                                self.dom = self.com[:n2]
+                            
+                            elif ".ipk" in self.com:
+                                if os.path.exists("/usr/bin/apt-get"):
+                                    self.session.open(
+                                        MessageBox,
+                                        _('Unknown Image!'),
+                                        MessageBox.TYPE_INFO,
+                                        timeout=5
+                                    )
+                                    return
+                                n2 = self.com.find("_")
+                                self.dom = self.com[:n2]
+                            
+                            elif any(ext in self.com for ext in [".zip", ".tar", ".gz", ".bz2"]):
+                                self.dom = self.com
+                            print('self.prombt self.com: ', self.com)
+                            self.prombt()
+                            return
+                        else:
+                            print('Return from prompt ')
+                            self['info'].setText('Select')
+        except Exception as e:
+            print('Error in prompt:', e)
+            self['info'].setText('Error')
 
     def prombt(self):
         self.plug = self.com.split("/")[-1]
         dest = "/tmp"
         if not os.path.exists(dest):
-            os.system('ln -sf  /var/volatile/tmp /tmp')
-        self.folddest = '/tmp/' + self.plug
-        cmd2 = ''
+            os.system('ln -sf /var/volatile/tmp /tmp')
+        self.folddest = dest + '/' + self.plug
+        cmd2 = ""
         if ".deb" in self.plug:
-            cmd2 = "dpkg -i /tmp/" + self.plug  # + "'"
-        if ".ipk" in self.plug:
-            cmd2 = "opkg install --force-reinstall --force-overwrite '/tmp/" + self.plug + "'"
+            cmd2 = "dpkg -i " + self.folddest
+        elif ".ipk" in self.plug:
+            cmd2 = "opkg install --force-reinstall --force-overwrite '" + self.folddest + "'"
         elif ".zip" in self.plug:
-            cmd2 = "unzip -o -q '/tmp/" + self.plug + "' -d /"
-        elif ".tar" in self.plug and "gz" in self.plug:
-            cmd2 = "tar -xvf '/tmp/" + self.plug + "' -C /"
-        elif ".bz2" in self.plug and "gz" in self.plug:
-            cmd2 = "tar -xjvf '/tmp/" + self.plug + "' -C /"
-        cmd = "wget --no-check-certificate -U '%s' -c '%s' -O '%s';%s > /dev/null" % (AgentRequest, str(self.com), self.folddest, cmd2)
-        title = (_("Installing %s\nPlease Wait...") % self.dom)
+            cmd2 = "unzip -o -q '" + self.folddest + "' -d /"
+        elif ".tar" in self.plug and ".gz" in self.plug:
+            cmd2 = "tar -xvf '" + self.folddest + "' -C /"
+        elif ".bz2" in self.plug and ".gz" in self.plug:
+            cmd2 = "tar -xjvf '" + self.folddest + "' -C /"
+        cmd = (
+            "wget --no-check-certificate -U '%s' -c '%s' -O '%s'; %s > /dev/null" % 
+            (AgentRequest, self.com, self.folddest, cmd2)
+        )
+        title = _("Installing %s\nPlease Wait...") % self.dom
         self.session.open(Console, _(title), [cmd], closeOnSuccess=False)
 
 
@@ -557,6 +567,7 @@ def checkGZIP(url):
         from urllib.request import (urlopen, Request)
     else:
         from urllib2 import (urlopen, Request)
+
     hdr = {"User-Agent": AgentRequest}
     response = None
     request = Request(url, headers=hdr)
