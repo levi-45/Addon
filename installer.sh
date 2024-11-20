@@ -3,7 +3,7 @@
 ## setup command=wget -q "--no-check-certificate" https://raw.githubusercontent.com/levi-45/Addon/main/installer.sh -O - | /bin/sh
 ## Only This 2 lines to edit with new version ######
 version='10.1-r27'
-changelog='If you on dream box shows .deb folder, and if you on all other boxes then shows only .ipk files'
+changelog='Fixed Dreambox issue'
 ##
 TMPPATH=/tmp/Addon-main
 FILEPATH=/tmp/main.tar.gz
