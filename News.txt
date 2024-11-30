@@ -1,12 +1,17 @@
 Satellite-Forum.Com
 
-levi45 Addons Panel UPDATE 20-11-2024
+levi45 Addons Panel UPDATE 30-11-2024
 -------------------------------------------------------------------------
-enigma2-plugin-extensions-levi45-addon_10.1-r27_all.ipk
-enigma2-plugin-extensions-levi45multicammanager_10.1-r33_all.ipk
-enigma2-plugin-softcams-oscam-emu-levi45_11856-802_all.ipk
+enigma2-plugin-extensions-xstreamity_4.66.20241127_all.ipk
+enigma2-plugin-extensions-wireguard-vpn_13.0_all.ipk
+enigma2-plugin-extensions-wireguard-vpn-aarch64_13.0_all.ipk
+enigma2-plugin-extensions-wireguard-vpn-mips_13.0_all.ipk
+enigma2-plugin-extensions-wireguard-vpn-py3.1.3_13.0_all.ipk
+enigma2-plugin-extensions-wireguard-vpn-py3.9_13.0_all.ipk
+enigma2-plugin-skins-metrixfhd-neo_V.7s_r8_all.ipk
+enigma2-plugin-skins-xDreamy_4.3.1_all.ipk
 -------------------------------------------------------------------------
-enigma2-plugin-extensions-levi45-addon_10.1-r27_all.deb
-enigma2-plugin-extensions-levi45multicammanager_10.1-r33_all.deb
-enigma2-plugin-softcams-oscam-emu-levi45_11856-802_all.deb
+enigma2-plugin-extensions-xstreamity_4.66_20241127_all.deb
+enigma2-skin-hdsuisse.2k_4.2_all.deb
+enigma2-skin-hdsuisse.one4all.fhd_10.8_all.deb
 -------------------------------------------------------------------------
