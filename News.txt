@@ -1,21 +1,12 @@
 Satellite-Forum.Com
 
-levi45 Addons Panel UPDATE 30-11-2024
+levi45 Addons Panel UPDATE 01-12-2024
 -------------------------------------------------------------------------
-enigma2-plugin-extensions-xstreamity_4.66.20241127_all.ipk
-enigma2-plugin-extensions-wireguard-vpn_13.0_all.ipk
-enigma2-plugin-extensions-wireguard-vpn-aarch64_13.0_all.ipk
-enigma2-plugin-extensions-wireguard-vpn-mips_13.0_all.ipk
-enigma2-plugin-extensions-wireguard-vpn-py3.1.3_13.0_all.ipk
-enigma2-plugin-extensions-wireguard-vpn-py3.9_13.0_all.ipk
-enigma2-plugin-skins-metrixfhd-neo_V.7s_r8_all.ipk
-enigma2-plugin-skins-xDreamy_4.3.1_all.ipk
-enigma2-plugin-extensions-youtube_h1-git1233-95a7d80-r0.0.ipk
-enigma2-plugin-extensions-youtube_py3-git1233-95a7d80-r0.0.ipk
-enigma2-plugin-extensions-xklass_1.25.20241127_all.ipk
+enigma2-plugin-extensions-xklass_1.26.20241201_all.ipk
+enigma2-plugin-extensions-xstreamity_4.67.20241201_all.ipk
 -------------------------------------------------------------------------
-enigma2-plugin-extensions-xstreamity_4.66_20241127_all.deb
-enigma2-skin-hdsuisse.2k_4.2_all.deb
-enigma2-skin-hdsuisse.one4all.fhd_10.8_all.deb
-enigma2-plugin-extensions-xklass_1.25_20241127_all.deb
+enigma2-plugin-extensions-xstreamity_4.67_20241201_all.deb
+enigma2-plugin-extensions-xklass_1.26_20241201_all.deb
+enigma2-plugin-extensions-youtube_2024.12.01-Beta-mod. AMIN_all.deb
+
 -------------------------------------------------------------------------
