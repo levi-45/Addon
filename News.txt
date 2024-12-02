@@ -1,12 +1,13 @@
 Satellite-Forum.Com
 
-levi45 Addons Panel UPDATE 01-12-2024
+levi45 Addons Panel UPDATE 02-12-2024
 -------------------------------------------------------------------------
-enigma2-plugin-extensions-xklass_1.26.20241201_all.ipk
-enigma2-plugin-extensions-xstreamity_4.67.20241201_all.ipk
+enigma2-plugin-extensions-ajpanel_v10.2.1_all.ipk
+enigma2-plugin-extensions-wireguard-vpn-py3.9_13.1_all.ipk
+enigma2-plugin-extensions-xklass_1.26.20241202_all.ipk
+enigma2-plugin-extensions-xstreamity_4.67.20241202_all.ipk
 -------------------------------------------------------------------------
-enigma2-plugin-extensions-xstreamity_4.67_20241201_all.deb
-enigma2-plugin-extensions-xklass_1.26_20241201_all.deb
-enigma2-plugin-extensions-youtube_2024.12.01-Beta-mod. AMIN_all.deb
-enigma2-skin-hdsuisse.one4all.fhd_10.8-r1_all.deb
+enigma2-plugin-extensions-xklass_1.26_20241202_all.deb
+enigma2-plugin-extensions-xstreamity_4.67_20241202_all.deb
+enigma2-plugin-extensions-ajpanel_v10.2.1_all.deb
 -------------------------------------------------------------------------
