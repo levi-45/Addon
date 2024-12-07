@@ -1,13 +1,24 @@
 Satellite-Forum.Com
 
-levi45 Addons Panel UPDATE 02-12-2024
+levi45 Addons Panel UPDATE 07-12-2024
 -------------------------------------------------------------------------
-enigma2-plugin-extensions-ajpanel_v10.2.1_all.ipk
-enigma2-plugin-extensions-wireguard-vpn-py3.9_13.1_all.ipk
 enigma2-plugin-extensions-xklass_1.26.20241202_all.ipk
 enigma2-plugin-extensions-xstreamity_4.67.20241202_all.ipk
+enigma2-plugin-extensions-ajpanel_v10.2.3_all.ipk
+enigma2-plugin-extensions-wireguard-vpn_13.4_all.ipk
+enigma2-plugin-extensions-wireguard-vpn-aarch64_13.4_all.ipk
+enigma2-plugin-extensions-wireguard-vpn-mips_13.4_all.ipk
+enigma2-plugin-extensions-wireguard-vpn-py3.9_13.4_all.ipk
+enigma2-plugin-skins-slyk1080r19_2.30.20241207_all.ipk
+enigma2-plugin-skins-slyk-onyx-1080_2.46.20241207_all.ipk
+enigma2-plugin-skins-slyk-q-1080_1.49.20241207_all.ipk
+enigma2-plugin-softcams-oscamicamnewtest_11857-ICAMEMUTEST-Kitte888-V10Rev_all.ipk
+enigma2-skin-fullhdglass17_9.32_all.ipk
 -------------------------------------------------------------------------
 enigma2-plugin-extensions-xklass_1.26_20241202_all.deb
 enigma2-plugin-extensions-xstreamity_4.67_20241202_all.deb
-enigma2-plugin-extensions-ajpanel_v10.2.1_all.deb
+enigma2-plugin-extensions-ajpanel_v10.2.3_all.deb
+enigma2-plugin-softcams-oscam-emu-kitte888_11857-802.deb
+enigma2-skin-fullhdglass17_9.32_all.deb
+enigma2-plugin-extensions-epgimport-dreamos_2.0_all.deb
 -------------------------------------------------------------------------
