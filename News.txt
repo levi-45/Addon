@@ -2,7 +2,7 @@ Satellite-Forum.Com
 
 levi45 Addons Panel UPDATE 12-12-2024
 -------------------------------------------------------------------------
-enigma2-plugin-softcams-oscam-emu-levi45_11858-802_all.ipk
+enigma2-plugin-softcams-oscam-emu-levi45_11860-802_all.ipk
 enigma2-plugin-extensions-hdfradio_2.16.9_py2_cortexa7hf-vfp.ipk
 enigma2-plugin-extensions-hdfradio_2.16.9_py2_cortexa9hf-neon-vfpv4.ipk
 enigma2-plugin-extensions-hdfradio_2.16.9_py2_cortexa15hf-neon-vfpv4.ipk
@@ -25,5 +25,5 @@ enigma2-plugin-softcams-powercam-oscam_11860-emu-r802_all.ipk
 enigma2-plugin-softcams-supcam-oscam_11860-emu-r802_all.ipk
 enigma2-plugin-softcams-ultracam-oscam_11860-emu-r802_all.ipk
 -------------------------------------------------------------------------
-enigma2-plugin-softcams-oscam-emu-levi45_11858-802_all.deb
+enigma2-plugin-softcams-oscam-emu-levi45_11860-802_all.deb
 -------------------------------------------------------------------------
