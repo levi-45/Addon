@@ -1,29 +1,17 @@
 Satellite-Forum.Com
 
-levi45 Addons Panel UPDATE 12-12-2024
+levi45 Addons Panel UPDATE 16-12-2024
 -------------------------------------------------------------------------
-enigma2-plugin-softcams-oscam-emu-levi45_11860-802_all.ipk
-enigma2-plugin-extensions-hdfradio_2.16.9_py2_cortexa7hf-vfp.ipk
-enigma2-plugin-extensions-hdfradio_2.16.9_py2_cortexa9hf-neon-vfpv4.ipk
-enigma2-plugin-extensions-hdfradio_2.16.9_py2_cortexa15hf-neon-vfpv4.ipk
-enigma2-plugin-extensions-hdfradio_2.16.9_py2_mips32el.ipk
-enigma2-plugin-extensions-hdfradio_2.16.9_py3_3.11.2_cortexa7hf-vfp.ipk
-enigma2-plugin-extensions-hdfradio_2.16.9_py3_3.11.2_cortexa9hf-neon.ipk
-enigma2-plugin-extensions-hdfradio_2.16.9_py3_3.11.2_cortexa15hf-neon-vfpv4.ipk
-enigma2-plugin-extensions-hdfradio_2.16.9_py3_3.11.2_mips32el.ipk
-enigma2-plugin-extensions-hdfradio_2.16.9_py3_3.12.6_cortexa7hf-vfp.ipk
-enigma2-plugin-extensions-hdfradio_2.16.9_py3_3.12.6_cortexa9hf-neon.ipk
-enigma2-plugin-extensions-hdfradio_2.16.9_py3_3.12.6_cortexa15hf-neon-vfpv4.ipk
-enigma2-plugin-extensions-hdfradio_2.16.9_py3_3.12.6_mips32el.ipk
-enigma2-plugin-extensions-hdfradio_2.16.9_py3_3.12_cortexa7hf-vfp.ipk
-enigma2-plugin-extensions-hdfradio_2.16.9_py3_3.12_cortexa9hf-neon.ipk
-enigma2-plugin-extensions-hdfradio_2.16.9_py3_3.12_cortexa15hf-neon-vfpv4.ipk
-enigma2-plugin-extensions-hdfradio_2.16.9_py3_3.12_mips32el.ipk
-enigma2-plugin-skins-darkfhd_v1.7_all.ipk
-enigma2-plugin-softcams-gosatplus-oscam_11860-emu-r802_all.ipk
-enigma2-plugin-softcams-powercam-oscam_11860-emu-r802_all.ipk
-enigma2-plugin-softcams-supcam-oscam_11860-emu-r802_all.ipk
-enigma2-plugin-softcams-ultracam-oscam_11860-emu-r802_all.ipk
+enigma2-plugin-softcams-oscam-emu-levi45_11861-802_all.ipk
+enigma2-plugin-extensions-xklass_1.27.20241214_all.ipk
+enigma2-plugin-extensions-xstreamity_4.68.20241214_all.ipk
+enigma2-plugin-extensions-footonsat_1.9-r0_all.ipk
+enigma2-plugin-extensions-xtraevent_6.804_all.ipk
+enigma2-plugin-skins-xDreamy_4.6.0_all.ipk
 -------------------------------------------------------------------------
-enigma2-plugin-softcams-oscam-emu-levi45_11860-802_all.deb
+enigma2-plugin-softcams-oscam-emu-levi45_11861-802_all.deb
+enigma2-plugin-extensions-epgimport-dreamos_2.5_all.deb
+enigma2-plugin-extensions-footonsat_1.9-r0_all.deb
+enigma2-plugin-extensions-xstreamity_4.68_20241214_all.deb
+enigma2-plugin-extensions-xklass_1.27_20241214_all.deb
 -------------------------------------------------------------------------
