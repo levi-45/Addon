@@ -1,6 +1,6 @@
 <!-- Skin 03/09/2023 -->
 <screen name="AddonPackages" position="center,center" size="1280,720" title="satellite-forum.com">
-    <widget name="countrymenu" position="37,129" size="790,405" font="Regular; 36" itemHeight="40" scrollbarMode="showOnDemand" zPosition="5" transparent="1" selectionPixmap="/usr/lib/enigma2/python/Plugins/Extensions/Levi45Addons/res/images/sliderb.png" />
+    <widget name="list" position="37,129" size="790,405" font="Regular; 36" itemHeight="40" scrollbarMode="showOnDemand" zPosition="5" transparent="1" selectionPixmap="/usr/lib/enigma2/python/Plugins/Extensions/Levi45Addons/res/images/sliderb.png" />
     <widget name="info" position="23,580" zPosition="5" size="796,80" font="Regular; 32" foregroundColor="#ffff00" transparent="1" halign="center" valign="center" />
     <widget name="fspace" position="815,580" zPosition="5" size="452,81" font="Regular; 28" foregroundColor="#4da6ff" transparent="1" halign="center" valign="center" />
     <ePixmap position="0,0" zPosition="-1" size="1280,720" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Levi45Addons/res/images/AddonsGroups.png" transparent="1" scale="stretch" alphatest="on" />

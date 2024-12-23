@@ -78,7 +78,7 @@ except:
 
 
 # set
-currversion = '10.1-r27'
+currversion = '10.1-r28'
 name_plug = 'Levi45 Addon'
 desc_plug = 'Satellite-Forum.com Addons %s' % currversion
 plugin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/{}".format('Levi45Addons'))
@@ -470,7 +470,7 @@ class AddonPackages(Screen):
 
         adlist.sort()
 
-        self['countrymenu'] = MenuList(adlist)
+        self['list'] = MenuList(adlist)
         self['info'].setText('Select')
         try:
             mfre = getfreespace()
@@ -488,7 +488,7 @@ class AddonPackages(Screen):
         if not result:
             return
         try:
-            selection_country = self['countrymenu'].getCurrent()
+            selection_country = self['list'].getCurrent()
             for plugins in self.xmlparse.getElementsByTagName('plugins'):
                 if str(plugins.getAttribute('cont')) == self.selection:
                     for plugin in plugins.getElementsByTagName('plugin'):
@@ -607,7 +607,7 @@ def Plugins(**kwargs):
     list = []
     # list.append(PluginDescriptor(name=_(name_plug), description=_(desc_plug), where=[PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], needsRestart=True, fnc=autostart))
     list.append(PluginDescriptor(name=name_plug, description=desc_plug, where=PluginDescriptor.WHERE_PLUGINMENU, icon=iconx, fnc=main))
-    list.append(PluginDescriptor(name=name_plug, description=desc_plug, where=PluginDescriptor.WHERE_MENU, icon=iconx, fnc=menu))
+    # list.append(PluginDescriptor(name=name_plug, description=desc_plug, where=PluginDescriptor.WHERE_MENU, icon=iconx, fnc=menu))
     # list.append(PluginDescriptor(name=name_plug, description=desc_plug, where=PluginDescriptor.WHERE_EXTENSIONSMENU, icon=iconx, fnc=main))
     return list
 
