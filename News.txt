@@ -4,6 +4,7 @@ levi45 Addons Panel UPDATE 20-08-2025
 -------------------------------------------------------------------------
 enigma2-plugin-extensions-levi45emulator_1.0_all.ipk
 enigma2-plugin-extensions-estalker_1.07.20250816_all.ipk
+enigma2-plugin-extensions-advancedeventlibrary_1.0r148_all.ipk
 -------------------------------------------------------------------------
 enigma2-plugin-extensions-levi45emulator_1.0_all.deb
 enigma2-plugin-extensions-estalker_1.08_20250819_all.deb
