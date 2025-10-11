@@ -1,14 +1,8 @@
 Satellite-Forum.Com
 
-levi45 Addons Panel UPDATE 20-09-2025
+levi45 Addons Panel UPDATE 11-10-2025
 -------------------------------------------------------------------------
-enigma2-plugin-extensions-estalker_1.13.20250920_all.ipk
-enigma2-plugin-extensions-kiddac-skin-e2sentials_1.04.20250920_all.ipk
-enigma2-plugin-extensions-xklass_1.66.20250920_all.ipk
-enigma2-plugin-extensions-xstreamity_5.15.20250920_all.ipk
+enigma2-plugin-softcams-oscam-emu-levi45_11889-803_all.ipk
 -------------------------------------------------------------------------
-enigma2-plugin-extensions-estalker_1.13_20250920_all.deb
-enigma2-plugin-extensions-kiddac-skin-e2sentials_1.04_20250920_all.deb
-enigma2-plugin-extensions-xklass_1.66_20250920_all.deb
-enigma2-plugin-extensions-xstreamity_5.15_20250920_all.deb
+enigma2-plugin-softcams-oscam-emu-levi45_11889-803_all.deb
 -------------------------------------------------------------------------
