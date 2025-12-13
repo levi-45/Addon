@@ -4,6 +4,8 @@
     <widget name="info" position="39,875" zPosition="4" size="867,90" font="Regular; 38" foregroundColor="yellow" transparent="1" halign="left" valign="center" />
     <widget name="fspace" position="1185,769" zPosition="4" size="578,194" font="Regular; 38" foregroundColor="#4da6ff" transparent="1" halign="center" valign="center" />
     <ePixmap position="0,0" zPosition="-1" size="1800,1055" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Levi45Addons/res/images/AddonsGroups.png" scale="stretch" transparent="1" alphatest="on" />
+    <ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Levi45Addons/res/images/kofi.png" position="150,575" size="100,100" scale="stretch" alphatest="blend" zPosition="5"/>
+    <ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Levi45Addons/res/images/paypal.png" position="600,575" size="100,100" scale="stretch" alphatest="blend" zPosition="5"/>    
     <widget backgroundColor="#101010" font="Regular; 46" foregroundColor="#60cefe" halign="right" position="1517,8" render="Label" size="250,50" source="global.CurrentTime" transparent="1" valign="center" zPosition="3">
       <convert type="ClockToText">Format:%H:%M:%S</convert>
     </widget>
