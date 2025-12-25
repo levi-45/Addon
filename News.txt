@@ -1,39 +1,19 @@
 Satellite-Forum.Com
 
-levi45 Addons Panel UPDATE 14-12-2025
+levi45 Addons Panel UPDATE 25-12-2025
 -------------------------------------------------------------------------
-enigma2-plugin-softcams-oscam-emu-levi45_11907-803_all.ipk
-enigma2-plugin-softcams-ncam_V15.6-r0_all.ipk
-enigma2-plugin-extensions-levi45-addon_10.1-r30_all.ipk
-enigma2-plugin-extensions-levi45emulator_1.2_all.ipk
-enigma2-plugin-extensions-levi45-freeserver_2.0_all.ipk
-enigma2-plugin-extensions-levi45iptv_1.1_all.ipk
-enigma2-plugin-extensions-levi45multicammanager_10.2-r4_all.ipk
-enigma2-plugin-extensions-levi45-settings_1.4_all.ipk
-enigma2-plugin-extensions-hdfradio_2.22.9_py3_3.13_mips32el.ipk
-enigma2-plugin-extensions-hdfradio_2.22.9_py3_3.13_cortexa9hf-neon.ipk
-enigma2-plugin-extensions-hdfradio_2.22.9_py3_3.13_cortexa7hf-vfp.ipk
-enigma2-plugin-extensions-hdfradio_2.22.9_py3_3.13_cortexa15hf-neon-vfpv4.ipk
-enigma2-plugin-extensions-hdfradio_2.22.9_py3_3.12_mips32el.ipk
-enigma2-plugin-extensions-hdfradio_2.22.9_py3_3.12_cortexa9hf-neon.ipk
-enigma2-plugin-extensions-hdfradio_2.22.9_py3_3.12_cortexa7hf-vfp.ipk
-enigma2-plugin-extensions-hdfradio_2.22.9_py3_3.12_cortexa15hf-neon-vfpv4.ipk
-enigma2-plugin-extensions-hdfradio_2.22.9_py3_3.12.6_mips32el.ipk
-enigma2-plugin-extensions-hdfradio_2.22.9_py3_3.12.6_cortexa9hf-neon.ipk
-enigma2-plugin-extensions-hdfradio_2.22.9_py3_3.12.6_cortexa7hf-vfp.ipk
-enigma2-plugin-extensions-hdfradio_2.22.9_py3_3.12.6_cortexa15hf-neon-vfpv4.ipk
-enigma2-plugin-extensions-hdfradio_2.22.9_py3_3.11.2_mips32el.ipk
-enigma2-plugin-extensions-hdfradio_2.22.9_py3_3.11.2_cortexa9hf-neon.ipk
-enigma2-plugin-extensions-hdfradio_2.22.9_py3_3.11.2_cortexa7hf-vfp.ipk
-enigma2-plugin-extensions-hdfradio_2.22.9_py3_3.11.2_cortexa15hf-neon-vfpv4.ipk
+enigma2-plugin-extensions-levi45-addon_10.1-r31_all.ipk
+enigma2-plugin-extensions-levi45emulator_1.3_all.ipk
+enigma2-plugin-extensions-levi45-freeserver_2.2_all.ipk
+enigma2-plugin-extensions-levi45iptv_1.3_all.ipk
+enigma2-plugin-extensions-levi45multicammanager_10.2-r5_all.ipk
+enigma2-plugin-extensions-levi45-settings_1.5_all.ipk
 
 -------------------------------------------------------------------------
-enigma2-plugin-softcams-oscam-emu-levi45_11907-803_all.deb
-enigma2-plugin-softcams-ncam-osdreambox_V15.6-r0.d
-enigma2-plugin-extensions-levi45-addon_10.1-r30_all.deb
-enigma2-plugin-extensions-levi45emulator_1.2_all.deb
-enigma2-plugin-extensions-levi45-freeserver_2.0_all.deb
-enigma2-plugin-extensions-levi45iptv_1.1_all.deb
-enigma2-plugin-extensions-levi45multicammanager_10.2-r4_all.deb
-enigma2-plugin-extensions-levi45-settings_1.4_all.deb
+enigma2-plugin-extensions-levi45-addon_10.1-r31_all.deb
+enigma2-plugin-extensions-levi45emulator_1.3_all.deb
+enigma2-plugin-extensions-levi45-freeserver_2.2_all.deb
+enigma2-plugin-extensions-levi45iptv_1.3_all.deb
+enigma2-plugin-extensions-levi45multicammanager_10.2-r5_all.deb
+enigma2-plugin-extensions-levi45-settings_1.5_all.deb
 -------------------------------------------------------------------------
