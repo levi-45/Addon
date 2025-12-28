@@ -78,7 +78,7 @@ except:
 
 
 # set
-currversion = '10.1-r30'
+currversion = '10.1-r31'
 name_plug = 'Levi45 Addon'
 desc_plug = 'Satellite-Forum.com Addons %s' % currversion
 plugin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/{}".format('Levi45Addons'))
@@ -284,10 +284,16 @@ class AddonsGroups(Screen):
         self['key_green'].hide()
         self['key_yellow'] = Button(_('News'))
         self['key_blue'] = Button(_('About'))
+        
+        # Add support widget
+        self["support"] = Label() 
+        support_txt = "Please Support if you like the plugin"
+        self["support"].setText(support_txt)        
+        
         self.list = []
         self.names = []
         self['list'] = MenuList([])
-        self['info'] = Label()
+        self['info'] = Label()              
         self['fspace'] = Label()
         self.addon = 'emu'
         self.icount = 0
