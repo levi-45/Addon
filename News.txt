@@ -1,6 +1,6 @@
 Satellite-Forum.Com
 
-levi45 Addons Panel UPDATE 25-12-2025
+levi45 Addons Panel UPDATE 26-12-2025
 -------------------------------------------------------------------------
 enigma2-plugin-extensions-levi45-addon_10.1-r31_all.ipk
 enigma2-plugin-extensions-levi45emulator_1.3_all.ipk
