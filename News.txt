@@ -1,19 +1,8 @@
 Satellite-Forum.Com
 
-levi45 Addons Panel UPDATE 26-12-2025
+levi45 Addons Panel UPDATE 07-01-2026
 -------------------------------------------------------------------------
-enigma2-plugin-extensions-levi45-addon_10.1-r31_all.ipk
-enigma2-plugin-extensions-levi45emulator_1.3_all.ipk
-enigma2-plugin-extensions-levi45-freeserver_2.2_all.ipk
-enigma2-plugin-extensions-levi45iptv_1.3_all.ipk
-enigma2-plugin-extensions-levi45multicammanager_10.2-r5_all.ipk
-enigma2-plugin-extensions-levi45-settings_1.5_all.ipk
-
+enigma2-plugin-softcams-oscam-emu-levi45_11919-803_all.ipk
 -------------------------------------------------------------------------
-enigma2-plugin-extensions-levi45-addon_10.1-r31_all.deb
-enigma2-plugin-extensions-levi45emulator_1.3_all.deb
-enigma2-plugin-extensions-levi45-freeserver_2.2_all.deb
-enigma2-plugin-extensions-levi45iptv_1.3_all.deb
-enigma2-plugin-extensions-levi45multicammanager_10.2-r5_all.deb
-enigma2-plugin-extensions-levi45-settings_1.5_all.deb
+enigma2-plugin-softcams-oscam-emu-levi45_11919-803_all.deb
 -------------------------------------------------------------------------
