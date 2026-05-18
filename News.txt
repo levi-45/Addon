@@ -1,8 +1,8 @@
 Satellite-Forum.Com
 
-levi45 Addons Panel UPDATE 10-05-2026
+levi45 Addons Panel UPDATE 18-05-2026
 -------------------------------------------------------------------------
-enigma2-plugin-softcams-oscam-emu-levi45_11959-803_all.ipk
+enigma2-plugin-softcams-oscam-emu-levi45_11960-803_all.ipk
 -------------------------------------------------------------------------
-enigma2-plugin-softcams-oscam-emu-levi45_11959-803_all.deb
+enigma2-plugin-softcams-oscam-emu-levi45_11960-803_all.deb
 -------------------------------------------------------------------------
